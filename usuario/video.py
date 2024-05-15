@@ -2,7 +2,8 @@ import cv2
 import numpy as np
 import face_recognition
 
-def video(cap, foto):
+def video():
+    cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
     while True:
         ret, frame = cap.read()
         frame = cv2.flip(frame, 1)
@@ -16,4 +17,9 @@ def video(cap, foto):
                     continue
                 yield(b'--frame\r\n' b'content-Type: image/jpeg\r\n\r\n'+bytearray(encodeImage)+b'\r\n')
 
-                
+def fotoToDB(nombre):
+    cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+    ret, frame = cap.read()
+    frame = cv2.flip(frame, 1)
+    _, image_bytes = cv2.imencode('.jpg', frame)
+    return image_bytes
