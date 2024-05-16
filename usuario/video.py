@@ -17,7 +17,7 @@ def video():
                     continue
                 yield(b'--frame\r\n' b'content-Type: image/jpeg\r\n\r\n'+bytearray(encodeImage)+b'\r\n')
 
-def fotoToDB(nombre):
+def fotoToDB():
     cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
     ret, frame = cap.read()
     frame = cv2.flip(frame, 1)

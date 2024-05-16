@@ -713,7 +713,7 @@
 								"$ref": "AAAAAAGPa5mee2UqZd8="
 							},
 							"name": "telefono",
-							"type": "NUMERIC",
+							"type": "VARCHAR",
 							"length": 0,
 							"unique": true
 						},
