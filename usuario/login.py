@@ -16,7 +16,6 @@ def index():
         nombre = request.form['nombre']
         apellido = request.form['apellido']
         rol = request.form['rol'] # cambiar input cuando exista un S
-        print(matricula, correo, movil, nombre, apellido, rol)
         img = fotoToDB()
         try:
             db, c = get_db()
