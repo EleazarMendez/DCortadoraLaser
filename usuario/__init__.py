@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 from dotenv import load_dotenv
-from . import home, login
+from . import home, signin, login
 
 def create_app():
     app = Flask(__name__)
@@ -14,5 +14,6 @@ def create_app():
         DATABASE = os.getenv('BATABASE')
     )
     app.register_blueprint(home.bp)
+    app.register_blueprint(signin.bp)
     app.register_blueprint(login.bp)
     return app
