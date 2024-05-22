@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Inicio -cl</title>
 </head>
-<body>
+<body class="Home">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <img src="static/logos/tec.png" class="logoHome">
+    <img src="{{ url_for('static', filename='logos/tec.png') }}" class="HomeImg">
     <form method="post">
-        <input type="submit" value="Iniciar" class="iniciar">
+        <input type="submit" value="Bienvenido al sistema de cortadoras da click para iniciar" class="iniciar">
     </form>
 </body>
 </html>

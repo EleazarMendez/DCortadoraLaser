@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 from dotenv import load_dotenv
-from . import home, signin, login
+from . import home, signin, login, userMenu
 
 def create_app():
     app = Flask(__name__)
@@ -16,4 +16,5 @@ def create_app():
     app.register_blueprint(home.bp)
     app.register_blueprint(signin.bp)
     app.register_blueprint(login.bp)
+    app.register_blueprint(userMenu.bp)
     return app
