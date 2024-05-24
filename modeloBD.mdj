@@ -463,8 +463,8 @@
 							"left": 40,
 							"top": 103,
 							"width": 182,
-							"height": 96,
-							"text": "Rol\nU = usuario (corta)\nA = administrador (corta + admin usuarios)\nS = super administrador (corta + admin de U, A y S)"
+							"height": 73,
+							"text": "Rol\nU = usuario (corta)\nA = administrador (corta + admin usuarios)"
 						}
 					]
 				},

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form method="post">
+        <label for="matricula">Matricula</label>
+        <input type="text" name="matricula" id="matricula" maxlength="9" required>
+        <label for="correo">email</label>
+        <input type="email" name="correo" id="correo" maxlength="45" required>
+        <label for="telefono">Telefono</label>
+        <input type="tel" name="telefono" id="telefono" maxlength="10" required>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" maxlength="45" required>
+        <label for="apellido">Apellido</label>
+        <input type="text", name="apellido" id="apellido" maxlength="45" required>
+        <input type="submit" value="Crear">
+        <img src="{{ url_for('userMenu.feed') }}">
+    </form>
+{% endblock %}

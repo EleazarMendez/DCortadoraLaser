@@ -6,9 +6,9 @@
     {% if g.user %}
     <ul class="menuPrincipal">
         <li>Iniciar Corte</li>
-        <li>Notificaciones</li>
+        <li><a href="{{ url_for('userMenu.noti') }}">Notificaciones</a></li>
         {% if g.user['rol']=='A' %}
-        <LI>Alta de usuarios</LI>
+        <LI><a href="{{ url_for('signin.index') }}">Alta de usuarios</a></LI>
         {% endif %}
         {% if g.user['rol']=='S' %}
         <li>Administracion de usuarios</li>

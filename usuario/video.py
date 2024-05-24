@@ -16,6 +16,9 @@ def video():
                 if not flag:
                     continue
                 yield(b'--frame\r\n' b'content-Type: image/jpeg\r\n\r\n'+bytearray(encodeImage)+b'\r\n')
+        else:
+            continue
+
 
 def fotoToDB():
     cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
