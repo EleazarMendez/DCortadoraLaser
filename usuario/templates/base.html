@@ -10,10 +10,6 @@
         {% if g.user['rol']=='A' %}
         <LI><a href="{{ url_for('signin.index') }}">Alta de usuarios</a></LI>
         {% endif %}
-        {% if g.user['rol']=='S' %}
-        <li>Administracion de usuarios</li>
-        {% endif %}
-        <li><a href="{{ url_for('login.logout') }}">Cerrar sesión</a></li>
     </ul>
     {% endif %}
 </header>
