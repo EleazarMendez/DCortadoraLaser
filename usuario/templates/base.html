@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <title>{% block title %}{% endblock %} -cl </title>
 <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}">
+<header>
+    <img src="{{ url_for('static', filename='logos/tecH.png') }}" class="logoHeader">
+    {% if g.user %}
+    <ul class="menuPrincipal">
+        <li>Iniciar Corte</li>
+        <li><a href="{{ url_for('userMenu.noti') }}">Notificaciones</a></li>
+        {% if g.user['rol']=='A' %}
+        <LI><a href="{{ url_for('signin.index') }}">Alta de usuarios</a></LI>
+        {% endif %}
+    </ul>
+    {% endif %}
+</header>
 <section>
     {% block content %}{% endblock %}
 </section>

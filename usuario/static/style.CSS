@@ -1,10 +1,90 @@
 :root{
     --primary: #0039A6;
+    --background: #E7E7E7;
+    --linkHover: #bbc7d6;
     background-color: #E7E7E7;
     font-family: Arial, sans-serif, Georgia
 }
-.logoHome{
+
+/* Apariencia página de inicio */
+.Home{
+    text-align: center;
+}
+
+.HomeImg{
     height: auto;
     width: 200px;
-    text-align: center;
+}
+
+.iniciar{
+    background-color: var(--primary);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Fin */
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 4fr ;
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary);
+    border: 2px solid;
+    border-color: var(--primary);
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.logoHeader{
+    display: block;
+    height: auto;
+    width: 125px;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+/* menu de usuarios */
+.inicioCorte{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inicioCorte div{
+    background-color: var(--primary);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    color: white;
+    padding: 10px;
+}
+
+.menuPrincipal{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 16px;
+    display: flex; 
+    justify-content: flex-end;
+}
+
+.menuPrincipal li{
+    margin-right: 10px;
+    color: white;
+}
+
+.menuPrincipal li a{
+    text-decoration: none;
+    color: white;
+}
+
+.menuPrincipal a:hover{
+    color: var(--linkHover);
 }

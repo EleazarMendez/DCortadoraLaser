@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+    <label for="correo">email</label>
+    <input type="email" name="correo" id="correo" value="{{usuario['correo']}}" maxlength="45" required>
+    <label for="telefono">Telefono</label>
+    <input type="tel" name="telefono" id="telefono" value="{{usuario['telefono']}}" maxlength="10" required>
+    <label for="notimail">Notificaciones por email</label>
+    <input type="checkbox" name="notimail" id="notimail" {% if usuario['notcorreo']==1 %} checked {% endif %}>
+    <label for="noticel">Notificaciones por telefono</label>
+    <input type="checkbox" name="noticel" id="noticel" {% if usuario['notmovil']==1 %} checked {% endif %}>
+    <input type="submit" value="Actualizar">
+</form>
+{% endblock %}

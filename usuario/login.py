@@ -1,6 +1,6 @@
-from flask import Blueprint, flash, g, redirect, render_template, request, Response
+from flask import Blueprint, flash, g, redirect, render_template, request, Response, url_for, session
 import cv2
-import face_recognition
+import functools
 import mediapipe as mp
 import numpy as np
 from .db import get_db
@@ -24,10 +24,19 @@ def index():
             foto.append(img)
         user=fotoaut(matricula, foto)
         if user in matricula:
-            return user
+            session.clear()
+            session['user_id'] = user
+            return redirect(url_for('userMenu.index'))
         else:
-            return 'Quien chota sos?'  
+            error = 'Usuario no registrado'
+            flash(error)
+            # return 'Quien chota sos?'  
     return render_template('login/login.html')
+
+@bp.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('home.home'))
 
 @bp.route('/feed')
 def feed():
@@ -43,3 +52,20 @@ def feed():
         foto.append(img)
     return Response(detection(foto), mimetype="multipart/x-mixed-replace; boundary=frame")
 
+@bp.before_app_request
+def load_logged_in_user():
+    user_id = session.get('user_id')
+    if user_id is None:
+        g.user = None
+    else:
+        db, c = get_db()
+        c.execute('SELECT * FROM usuario WHERE matricula = %s', (user_id, ))
+        g.user = c.fetchone()
+
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(**kwargs):
+        if g.user is None:
+            return redirect(url_for('home.home'))
+        return view(**kwargs)
+    return wrapped_view
