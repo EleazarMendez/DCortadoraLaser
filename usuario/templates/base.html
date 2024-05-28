@@ -5,11 +5,12 @@
     <img src="{{ url_for('static', filename='logos/tecH.png') }}" class="logoHeader">
     {% if g.user %}
     <ul class="menuPrincipal">
-        <li>Iniciar Corte</li>
+        <li><a href="{{ url_for('userMenu.index') }}">Iniciar corte</a></li>
         <li><a href="{{ url_for('userMenu.noti') }}">Notificaciones</a></li>
         {% if g.user['rol']=='A' %}
         <LI><a href="{{ url_for('signin.index') }}">Alta de usuarios</a></LI>
         {% endif %}
+        <li><a href="{{ url_for('login.logout')}}">Cerrar sesión</a></li>
     </ul>
     {% endif %}
 </header>

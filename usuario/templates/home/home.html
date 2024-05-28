@@ -8,8 +8,8 @@
 <body class="Home">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <img src="{{ url_for('static', filename='logos/tec.png') }}" class="HomeImg">
-    <form method="post">
-        <input type="submit" value="Bienvenido al sistema de cortadoras da click para iniciar" class="iniciar">
-    </form>
+    <div>
+        <a href="{{ url_for('login.index') }}" class="btnInicio">Bienvenido al sistema de cortadoras da click para iniciar</a>
+    </div>
 </body>
 </html>

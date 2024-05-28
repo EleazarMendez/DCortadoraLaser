@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
     <form action="" method="post">
-    <img src="{{ url_for('login.feed') }}" alt="">
-    <input type="submit" value="Verificar">
+        <div class="loginImg">
+            <img src="{{ url_for('login.feed') }}" alt="">
+        </div>
+        <div class="loginInput">
+            <input type="submit" value="Verificar">
+        </div>
     </form>
 {% endblock %}

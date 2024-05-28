@@ -1,14 +1,26 @@
 {% extends 'base.html' %}
+{% block title %}
+Notificaciones
+{% endblock %}
 {% block content %}
 <form method="post">
-    <label for="correo">email</label>
-    <input type="email" name="correo" id="correo" value="{{usuario['correo']}}" maxlength="45" required>
-    <label for="telefono">Telefono</label>
-    <input type="tel" name="telefono" id="telefono" value="{{usuario['telefono']}}" maxlength="10" required>
-    <label for="notimail">Notificaciones por email</label>
-    <input type="checkbox" name="notimail" id="notimail" {% if usuario['notcorreo']==1 %} checked {% endif %}>
-    <label for="noticel">Notificaciones por telefono</label>
-    <input type="checkbox" name="noticel" id="noticel" {% if usuario['notmovil']==1 %} checked {% endif %}>
-    <input type="submit" value="Actualizar">
+    <div class="noti">
+        <h2 class="notiHeader"><label for="correo">Email</label></h2>
+        <input type="email" name="correo" id="correo" value="{{usuario['correo']}}" maxlength="45" required>
+        <hr></hr>
+        <h2 class="notiHeader"><label for="telefono">Telefono</label></h2>
+        <input type="tel" name="telefono" id="telefono" value="{{usuario['telefono']}}" maxlength="10" required>
+        <hr></hr>
+        <h2 class="notiHeader"><label for="notimail">Notificaciones por email</label></h2>
+        <span>Activas: </span>
+        <input type="checkbox" name="notimail" id="notimail" {% if usuario['notcorreo']==1 %} checked {% endif %}>
+        <hr></hr>
+        <h2 class="notiHeader"><label for="noticel">Notificaciones por telefono</label></h2>
+        <span>Activas: </span>
+        <input type="checkbox" name="noticel" id="noticel" {% if usuario['notmovil']==1 %} checked {% endif %}>
+    </div>
+    <div class="notiSend">
+        <input type="submit" value="Actualizar">
+    </div>
 </form>
 {% endblock %}

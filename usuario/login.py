@@ -1,7 +1,6 @@
 from flask import Blueprint, flash, g, redirect, render_template, request, Response, url_for, session
 import cv2
 import functools
-import mediapipe as mp
 import numpy as np
 from .db import get_db
 from .video import fotoaut, detection
@@ -30,7 +29,6 @@ def index():
         else:
             error = 'Usuario no registrado'
             flash(error)
-            # return 'Quien chota sos?'  
     return render_template('login/login.html')
 
 @bp.route('/logout')

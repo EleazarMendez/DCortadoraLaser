@@ -6,14 +6,15 @@ import numpy as np
 from .db import get_db
 from usuario.login import login_required
 from .video import video, fotoToDB
+from .subPubMqtt import publish
 
 bp = Blueprint('userMenu', __name__, url_prefix='/userMenu')
 
 @bp.route('/')
 @login_required
 def index():
-    matricula = g.user['matricula']
-    return render_template('accion/userMain.html',usuario=matricula)
+    nombre = g.user['nombre'] + ' ' +g.user['apellido']
+    return render_template('accion/userMain.html',usuario=nombre)
 
 @bp.route('/noti',methods=['GET','POST'])
 @login_required
@@ -50,6 +51,11 @@ def altaUser():
         db.commit()
         return redirect(url_for('userMenu.index')) 
     return render_template(url_for('signin.index'))
+
+@bp.route('/mandar')
+def mandar():
+    publish()
+    return redirect(url_for('userMenu.noti'))
 
 @bp.route('/feed')
 def feed():

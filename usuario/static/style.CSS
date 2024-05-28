@@ -1,9 +1,9 @@
 :root{
     --primary: #0039A6;
-    --background: #E7E7E7;
+    --backgroud: whitesmoke;
     --linkHover: #bbc7d6;
-    background-color: #E7E7E7;
-    font-family: Arial, sans-serif, Georgia
+    background-color: var(--backgroud);
+    font-family: Arial, sans-serif, Georgia;
 }
 
 /* Apariencia página de inicio */
@@ -13,19 +13,36 @@
 
 .HomeImg{
     height: auto;
-    width: 200px;
+    width: 250px;
+    margin-top: 200px;
 }
 
 .iniciar{
     background-color: var(--primary);
     color: white;
     border: 0;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
 }
 
+.btnInicio{
+    background-color: var(--primary);
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px;
+    transition: all 0.2s ease;
+}
+
+.btnInicio:hover{
+    color: var(--linkHover);
+    font-size: large;
+    padding: 15px;
+} 
 /* Fin */
 
+/* header */
 header{
     display: grid;
     grid-template-columns: 1fr 4fr ;
@@ -48,24 +65,35 @@ header{
     margin-top: 8px;
     margin-left: 10px;
 }
+/* Fin */
 
-/* menu de usuarios */
-.inicioCorte{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+/* login */
+.loginImg{
+    text-align: center;
 }
 
-.inicioCorte div{
+.loginInput{
+    text-align: center;
+}
+
+.loginInput input{
     background-color: var(--primary);
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: justify;
     color: white;
     padding: 10px;
+    border: 0px;
+    border-radius: 5px;
+    padding-top: 5px;
+    transition: all 0.2s ease;
 }
 
+.loginInput input:hover{
+    color: var(--linkHover);
+    font-size: large;
+    padding: 15px;
+}
+/* Fin */
+
+/* Menu principal */
 .menuPrincipal{
     list-style-type: none;
     padding: 0;
@@ -88,3 +116,55 @@ header{
 .menuPrincipal a:hover{
     color: var(--linkHover);
 }
+/* Fin */
+
+/* menu de usuarios principal */
+.inicioCorte{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicioCorte a{
+    background-color: var(--primary);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.inicioCorte a:hover{
+    color: var(--linkHover);
+    font-size: large;
+    padding: 15px;
+}
+/* Fin */
+
+/* Actualizar notificaciones */
+.noti{
+    margin-bottom: 10px;
+}
+
+.notiHeader{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.notiSend input{
+    padding: 10px;
+    background-color: var(--primary);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.notiSend input:hover{
+    padding: 15px;
+    color: var(--linkHover);
+    font-size: large;
+}
+/* Fin */
+

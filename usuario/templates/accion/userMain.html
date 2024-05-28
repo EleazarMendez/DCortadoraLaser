@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>{{usuario}}</h1>
+<h1>Bienvenido {{usuario}}</h1>
     <div class="inicioCorte">
-        <div>
-            iniciar corte
-        </div>
+        <a href="{{url_for('userMenu.mandar')}}">Iniciar corte</a>
     </div>
 {% endblock %}
